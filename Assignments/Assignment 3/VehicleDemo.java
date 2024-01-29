@@ -6,34 +6,39 @@ package Day1;
 class Vehicle{
 	String make;
 	String model;
-	int Year;
+	int py=2014;
+	public int Year(){
+		return py;
+	}
 }
 class Car extends Vehicle{
-	public void Car() {
-		System.out.println("The Car making company is: "+make);
-		System.out.println("The Car model name is: "+model);
-		System.out.println("The Car making year is: "+Year);
+	Car(String make,String model,int py) {
+		this.make=make;
+		this.model=model;
+		this.py=py;
+		System.out.println(make+" "+model);
 		
+	}
+	public int Year(){
+		return py;
 	}
 }
 class MotorCycle extends Vehicle{
-	public void MotorCycle() {
-		System.out.println("The MotorCycle making company is: "+make);
-		System.out.println("The MotorCycle model name is: "+model);
-		System.out.println("The MotorCycle making year is: "+Year);
+	MotorCycle(String make,String model,int py) {
+		this.make=make;
+		this.model=model;
+		this.py=py;
+		System.out.println(make+" "+model);
+	}
+	public int Year(){
+		return py;
 	}
 }
 public class VehicleDemo {
 	public static void main(String[] args) {
-		Car car1=new Car();
-		MotorCycle motor1=new MotorCycle();
-		car1.make="Suzuki";
-		car1.model="MARUTI SUZUKI";
-		car1.Year=1985;
-		car1.Car();
-		motor1.make="HMSI";
-		motor1.model="HONDA SHINE";
-		motor1.Year=2000;
-		motor1.MotorCycle();
+		Car car1=new Car("Suzuki","MARUTI SUZUKI",1985);
+		System.out.println(car1.py);
+		MotorCycle motor1=new MotorCycle("HMSI","HONDA SHINE",2000);
+		System.out.println(motor1.py);
 	}
 }
