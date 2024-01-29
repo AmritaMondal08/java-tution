@@ -4,21 +4,26 @@ package Day1;
 //Number of words in the sentence.
 //Number of vowels and consonants.
 //The sentence in reverse order.
+import java.util.Scanner;
 public class StringDemo {
 	public static void main(String[] args) {
-		String clg = "MCKV INSTITUTE OF ENGINEERING";
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a string: ");
+		String str=sc.nextLine();
 		
 		//To print number of words in the sentence
-		System.out.println(clg.length());
+		int l=str.length();
+		System.out.println(l);
 		
 		//To print number of vowels and consonants
 		int vowel=0;
 		int consonant=0;
 		for(int i=0; i<clg.length(); i++) {
-			if(clg.charAt(i)=='A'||clg.charAt(i)=='E'||clg.charAt(i)=='I'||clg.charAt(i)=='O'||clg.charAt(i)=='U') {
+			if(clg.charAt(i)=='A'||clg.charAt(i)=='E'||clg.charAt(i)=='I'||clg.charAt(i)=='O'||clg.charAt(i)=='U'||
+			  str.charAt(i)=='a'||str.charAt(i)=='e'||str.charAt(i)=='i'||str.charAt(i)=='o'||str.charAt(i)=='u')) {
 				vowel++;
 			}
-			else if(clg.charAt(i)>'A' && clg.charAt(i)<'Z') {
+			else {
 				consonant++;
 			}
 		}
@@ -26,9 +31,11 @@ public class StringDemo {
 		System.out.println("The numbers of consonants in the sentence: "+consonant);
 		
 		//To print the sentence in reverse order
-		StringBuilder reversestring=new StringBuilder(clg);
-		reversestring.reverse();
-		reversestring.toString();
-		System.out.println(reversestring);
+		String s=" ";
+		for(int i=l-1;i>=0;i--) {
+			s=s+str.charAt(i);
+		}
+		System.out.println("Reverse of the string is: "+s);
+		sc.close();
 	}
 }
