@@ -23,7 +23,7 @@ public class StringDemo {
 			  str.charAt(i)=='a'||str.charAt(i)=='e'||str.charAt(i)=='i'||str.charAt(i)=='o'||str.charAt(i)=='u')) {
 				vowel++;
 			}
-			else {
+			else if(str.charAt(i)>='a'&&str.charAt(i)<='z'||str.charAt(i)>='A'&&str.charAt(i)<='Z') {
 				consonant++;
 			}
 		}
